@@ -1,14 +1,13 @@
 package users;
 
 public class Holders {
-	public static int login;
-	public static int loginPassword;
-	public static String name;
-	public static int cpf;
-	public static String email;
-	public static int transactionPassword;
-	public static int yearsOld;
-	public static double saldo;
+	public static int loginPassword = 12345678;
+	public static String name = "The Best of the World";
+	public static double cpf = 1122334455d;
+	public static String email = "TheBest.World@gmail.com";
+	public static int transactionPassword = 81169;
+	public static int yearsOld = 20;
+	public static double saldo = 70561;
 	
 	
 }
