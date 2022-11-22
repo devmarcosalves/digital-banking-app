@@ -17,9 +17,9 @@ public class HomeScreen {
         int opc;
         do{
 	        System.out.println("\n1.PIX - 2.RECARGA - 3.SALDO");
-	        System.out.println("4.DEPOSITO 5.TRANSFERÊNCIA 6.EMPRESTIMO");
+	        System.out.println("4.DEPÓSITO 5.TRANSFERÊNCIA 6.EMPRESTIMO");
 	        System.out.println("7. FINANCIAMENTO 8.PAGAMENTO 0.SAIR");
-	        System.out.print("Escolha uma opcao: ");
+	        System.out.print("Escolha uma opção: ");
 	        opc = sc.nextInt();
 	        switch(opc){
 	            case 1: 
@@ -32,7 +32,8 @@ public class HomeScreen {
 	                Balance.saldo(Holders.saldo);
 	                break;
 	            case 4:
-	                Deposit.deposito(Holders.saldo);
+	            	Deposit dep = new Deposit();
+	                dep.deposito(Holders.saldo);
 	                break;
 	            case 5:
 	                Transfer.values();
@@ -41,7 +42,7 @@ public class HomeScreen {
 	                Loan.money();
 	                break;
 	            case 7:
-	                Financing.credit();
+	                Financing.realEstate();
 	                break;
 	            case 8:
 	                Payment.billet();
@@ -49,7 +50,7 @@ public class HomeScreen {
 	            case 0:
 	            	break;
 	            default:
-	                System.out.println("Opção Inválida");
+	                System.out.println("Opção Inválida!");
 	                break;
 	        }
         }while(opc!=0);

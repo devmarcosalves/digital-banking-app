@@ -9,6 +9,7 @@ import screens.HomeScreen;
 public class Start {
 		
 	public static void main(String[] args) {
+		HomeScreen.menu();
 		Scanner sc = new Scanner(System.in);
 		//private static int opc = 0;
 		System.out.print("\t\tDIGITAL BANK\n");
@@ -73,15 +74,15 @@ public class Start {
 			System.out.print("\nSenha para Transações (apenas 6 números): ");
 			Holders.transactionPassword = sc.nextInt();
 			attempts--;
-			if(Holders.transactionPassword != Holders.loginPassword && FullManager.authorization() == 1) {
-				Holders.saldo = 0;
-				System.out.println("Conta criada com Sucesso!");
-				break;
-			}
 			if(attempts == 0) {
 				System.out.print("\nVocê excedeu a quantidade máxima de tentativas");
 				System.out.print("\nPor favor, entre em contato com o Banco");
 			}
+		}
+		System.out.println("Solicitação de cadastro finalizado com sucesso, aguarde aprovação\n");
+		if(Holders.transactionPassword != Holders.loginPassword && FullManager.authorization() == 1) {
+			Holders.saldo = 0;
+			System.out.println("Conta criada com Sucesso!");
 		}
 		//sc.close();
 	}
