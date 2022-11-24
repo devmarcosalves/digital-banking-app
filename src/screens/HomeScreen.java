@@ -18,7 +18,7 @@ public class HomeScreen {
         int opc;
         do{
         	if(Holders.transactionPassword != 0) {
-		        System.out.println("\n1.PIX - 2.RECARGA - 3.SALDO 4.DEPÓSITO");
+		        System.out.println("\n1.PIX 2.RECARGA 3.SALDO 4.DEPÓSITO");
 		        System.out.println("5.TRANSFERÊNCIA 6.EMPRESTIMO 7.FINANCIAMENTO");
 		        System.out.println("8.PAGAMENTO 9.REDEFINIR SENHA DE TRANSAÇÕES 0.SAIR");
 		        System.out.print("Escolha uma opção: ");
@@ -66,9 +66,10 @@ public class HomeScreen {
         		if(opc == 1) {
         			transactionPassword.reset();
         		}else if(opc == 0) {
+        			System.out.print("\n");
         			break;
         		}else
-        			System.out.println("Opção Inválida!");
+        			System.out.println("Opção Inválida!\n");
         	}
         }while(opc!=0);
     //sc.close();

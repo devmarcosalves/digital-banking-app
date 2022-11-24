@@ -12,7 +12,7 @@ public class Deposit {
 			x = x + depuser;
 			System.out.println("Depósito realizado com sucesso.");
 		}else {
-			System.out.println("Senha Incorreta.");
+			System.out.println("Senha Incorreta!");
 		}
 		//sc.close();
 		return x;

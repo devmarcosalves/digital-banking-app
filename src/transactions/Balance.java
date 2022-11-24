@@ -7,6 +7,6 @@ public class Balance {
 		if(Confirmation.authorization() == 1) {
 			System.out.println("Você tem R$" + x);
 		} else 
-			System.out.println("Senha Incorreta");
+			System.out.println("Senha Incorreta!");
 	}
 }
