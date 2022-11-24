@@ -76,6 +76,7 @@ public class Transfer {
 			aux--;
 			if(aux == 0) {
 				System.out.println("Sua Senha de Transações foi bloqueada!\n");
+				Holders.transactionPassword = 0;
 				break;
 			}
 			//A senha de Transações deve receber outro dado, até que o usuário redefina a senha

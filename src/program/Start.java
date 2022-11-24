@@ -9,7 +9,7 @@ import screens.HomeScreen;
 public class Start {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		HomeScreen.menu();
+		//HomeScreen.menu();
 		//private static int opc = 0;
 		System.out.print("\t\tDIGITAL BANK\n");
 		int opc;
@@ -65,21 +65,23 @@ public class Start {
 		System.out.print("Crie sua Senha para Transações (apenas 6 números): ");
 		Holders.transactionPassword = sc.nextInt(); 
 		int attempts = 3; 
-		while(Holders.transactionPassword == Holders.loginPassword && attempts > 0) {
-			System.out.print("\nSenhas iguais, crie uma senha diferente para Transações");
-			System.out.print("\nVocê tem (" +attempts+ ") tentativa(s)" );
-			System.out.print("\nSenha para Transações (apenas 6 números): ");
+		while(Holders.transactionPassword == Holders.loginPassword && attempts > 0 || Holders.transactionPassword == 0 && attempts > 0) {
+			System.out.println("\nERRO: A Senha de Transações não pode ser (0)");
+			System.out.println("ERRO: A Senha de Transações não pode ser igual a Senha de Login");
+			System.out.println("Você tem (" +attempts+ ") tentativa(s)" );
+			System.out.print("Senha para Transações (apenas 6 números): ");
 			Holders.transactionPassword = sc.nextInt();
 			attempts--;
-			if(attempts == 0) {
-				System.out.print("\nVocê excedeu a quantidade máxima de tentativas");
-				System.out.print("\nPor favor, entre em contato com o Banco");
-			}
 		}
-		System.out.println("Solicitação de cadastro finalizado com sucesso, aguarde aprovação\n");
-		if(Holders.transactionPassword != Holders.loginPassword && FullManager.authorization() == 1) {
-			Holders.saldo = 0;
-			System.out.println("Conta criada com Sucesso!");
+		if(attempts == 0) {
+			System.out.println("\nVocê excedeu a quantidade máxima de tentativas!");
+			System.out.println("Por favor, entre em contato com o Banco!");
+		} else {
+			System.out.println("Solicitação de cadastro finalizado com sucesso, aguarde aprovação!");
+			if(Holders.transactionPassword != Holders.loginPassword && FullManager.authorization() == 1) {
+				Holders.saldo = 0;
+				System.out.println("Conta criada com Sucesso!");
+			}
 		}
 		//sc.close();
 	}
