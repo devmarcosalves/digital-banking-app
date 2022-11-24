@@ -48,6 +48,7 @@ public class HomeScreen {
 	                Payment.billet();
 	                break;
 	            case 0:
+	            	System.out.print("\n");
 	            	break;
 	            default:
 	                System.out.println("Opção Inválida!");
