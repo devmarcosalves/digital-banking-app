@@ -7,10 +7,9 @@ import screens.HomeScreen;
 //import users.Manager;
 
 public class Start {
-		
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		HomeScreen.menu();
-		Scanner sc = new Scanner(System.in);
 		//private static int opc = 0;
 		System.out.print("\t\tDIGITAL BANK\n");
 		int opc;
@@ -40,7 +39,6 @@ public class Start {
 	}
 
 	public static void login(){
-		Scanner sc = new Scanner(System.in);
 		System.out.print("\nLogin: ");
 		double login = sc.nextDouble();
 		System.out.print("Senha: ");
@@ -54,7 +52,6 @@ public class Start {
 		//sc.close();
 	}
 	public static void registration(){
-		Scanner sc = new Scanner(System.in);
 		System.out.print("\nInforme seu Nome Completo: ");
 		Holders.name = sc.next();
 		System.out.print("Informe seu CPF: ");
@@ -87,7 +84,6 @@ public class Start {
 		//sc.close();
 	}
 	public static void deposit() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("\nInforme o CPF da conta de destino: ");
 		double cpfdestino = sc.nextDouble();
 		System.out.print("Digite o valor que deseja depositar: ");

@@ -3,10 +3,9 @@ package users;
 import java.util.Scanner;
 
 public class FullManager extends Manager{
-
+	static Scanner sc = new Scanner(System.in);
 	
 	public static int authorization() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("\nNOVO CADASTRO DE USUÁRIO");
 		System.out.println("Nome: "+Holders.name);
 		System.out.println("CPF: "+Holders.cpf);
@@ -14,7 +13,7 @@ public class FullManager extends Manager{
 		int x = sc.nextInt();
 		
 		
-		sc.close();
+		//sc.close();
 
 		return x;
 	}

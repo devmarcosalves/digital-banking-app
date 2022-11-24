@@ -4,8 +4,8 @@ import java.util.Scanner;
 import static users.Holders.transactionPassword;
 
 public class Confirmation {
+	static Scanner sc = new Scanner(System.in);
 	public static int authorization() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("Confirme sua Senha de Transações: ");
 		int confsenha = sc.nextInt();
 		
@@ -14,5 +14,6 @@ public class Confirmation {
 		}else { 
 			return 0;
 		}
+		//sc.close();
 	}
 }

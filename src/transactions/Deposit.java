@@ -4,8 +4,8 @@ import java.util.Scanner;
 import program.Confirmation;
 
 public class Deposit {
+	static Scanner sc = new Scanner(System.in);
 	public double deposito(double x) {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("Informe quanto deseja depositar: ");
 		double depuser = sc.nextDouble();
 		if(Confirmation.authorization() == 1) {
@@ -14,6 +14,7 @@ public class Deposit {
 		}else {
 			System.out.println("Senha Incorreta.");
 		}
+		//sc.close();
 		return x;
 	}
 }

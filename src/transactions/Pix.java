@@ -4,9 +4,9 @@ import java.util.Scanner;
 import users.Holders;
 
 public class Pix {
+	static Scanner sc = new Scanner(System.in);
 	public static void transfer(){
 		double aux;
-		Scanner sc = new Scanner(System.in);
 		System.out.println("\n\t\tPIX");
 		do {
 			System.out.println("1. Celular 2.CPF/CNPJ 3.E-mail 0.Sair");
@@ -14,7 +14,9 @@ public class Pix {
 			aux = sc.nextInt();
 			if(aux == 1 || aux == 2 || aux == 3) {
 				System.out.print("Digite a chave Pix: ");
+				@SuppressWarnings("unused")
 				String key = sc.next();
+				//Conferir se a chave pix é válida
 				System.out.print("Digite o valor: ");
 				double value = sc.nextDouble();
 				if(Holders.saldo >= value) {
@@ -39,5 +41,6 @@ public class Pix {
 				System.out.println("Chave Pix não encontrada, tente novamente!\n");
 			}
 		}while(aux!=0);
+		//sc.close();
     }
 }

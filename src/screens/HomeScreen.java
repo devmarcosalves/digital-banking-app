@@ -12,8 +12,8 @@ import transactions.Payment;
 import users.Holders;
 
 public class HomeScreen {
+	static Scanner sc = new Scanner(System.in);
 	public static void menu(){
-        Scanner sc = new Scanner(System.in);
         int opc;
         do{
 	        System.out.println("\n1.PIX - 2.RECARGA - 3.SALDO");

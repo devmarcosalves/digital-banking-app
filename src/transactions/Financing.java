@@ -4,11 +4,11 @@ import java.util.Scanner;
 import users.Manager;
 
 public class Financing {
+	static Scanner sc = new Scanner(System.in);
 	public static double valimovel;
 	public static double valentrada;
 	public static double finantotal;
 	public static void realEstate() {
-  	  Scanner sc = new Scanner(System.in);
   	  int aux;
   	  System.out.println("\nFINANCIAMENTO IMOBILIÁRIO");
   	  System.out.print("Informe o valor do imóvel: ");
@@ -42,7 +42,9 @@ public class Financing {
   		  
   	  }else if(opc == 3) {
   		  
-  	  }else
+  	  }else {
   		  System.out.println("Opção Inválida!");
+  	  }
+  	  //sc.close();
     }
 }

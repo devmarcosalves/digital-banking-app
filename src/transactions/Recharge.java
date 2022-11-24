@@ -5,16 +5,17 @@ import java.util.Scanner;
 import users.Holders;
 
 public class Recharge {
+	static Scanner sc = new Scanner(System.in);
 	public static void operators(){
 		double aux;
-		Scanner sc = new Scanner(System.in);
 		System.out.println("\n\t\tRECARGA");
 		do {
 			System.out.println("1. TIM 2. VIVO 3.CLARO 0.SAIR");
 			System.out.print("Selecione a sua Operadora: ");
 			aux = sc.nextInt();
 			if(aux == 1 || aux == 2 || aux == 3) {
-				System.out.print("Digite o seu número: ");
+				System.out.print("Digite o número: ");
+				@SuppressWarnings("unused")
 				double number = sc.nextDouble();
 				System.out.print("Informe o valor da Recarga: ");
 				int recarga = sc.nextInt();
