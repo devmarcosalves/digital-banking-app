@@ -6,7 +6,8 @@ import transactions.Financing;
 
 public class Manager {
 	static Scanner sc = new Scanner(System.in);
-	public static int analysis() {
+	public static boolean analysis() {
+		System.out.println("\n\t\tMANAGER");
 		System.out.println("\nSOLICITAÇÃO DE FINANCIAMENTO");
 		System.out.println("Nome: "+Holders.name);
 		System.out.println("CPF: "+Holders.cpf);
@@ -15,7 +16,14 @@ public class Manager {
 		System.out.println("Valor total do financiamento: "+Financing.finantotal);
 		System.out.print("\nDigite 1 para AUTORIZAR ou 0 para NEGAR: ");
 		int x = sc.nextInt();
+		if(x == 1) {
+			return true;
+		}else if(x == 0) {
+			return false;
+		}else {
+			System.out.println("Opção Inválida!");
+		}
 		//sc.close();
-		return x;
+		return false;
 	}
 }
