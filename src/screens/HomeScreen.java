@@ -10,7 +10,7 @@ import transactions.Transfer;
 import transactions.Financing;
 import transactions.Payment;
 import users.Holders;
-import program.transactionPassword;
+import program.TransactionPassword;
 
 public class HomeScreen {
 	static Scanner sc = new Scanner(System.in);
@@ -50,7 +50,7 @@ public class HomeScreen {
 		                Payment.billet();
 		                break;
 		            case 9:
-		            	transactionPassword.reset();
+		            	TransactionPassword.reset();
 		            	break;
 		            case 0:
 		            	System.out.print("\n");
@@ -64,7 +64,7 @@ public class HomeScreen {
         		System.out.print("Digite 1 para Desbloquear ou 0 para Sair: ");
         		opc = sc.nextInt();
         		if(opc == 1) {
-        			transactionPassword.reset();
+        			TransactionPassword.reset();
         		}else if(opc == 0) {
         			System.out.print("\n");
         			break;

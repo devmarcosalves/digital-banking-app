@@ -1,9 +1,11 @@
 package program;
 
 import java.util.Scanner;
+
+import screens.HomeScreen;
 import users.Holders;
 
-public class transactionPassword {
+public class TransactionPassword {
 	static Scanner sc = new Scanner(System.in);
 
 	public static void reset() {
@@ -12,12 +14,17 @@ public class transactionPassword {
 		do {
 			System.out.print("Digite a nova Senha de Transações: ");
 			newPassword = sc.nextInt();
+			while(newPassword == Holders.transactionPassword) {
+				System.out.println("A senha nova não pode ser igual a senha anterior!");
+				System.out.print("Digite a nova Senha de Transações: ");
+				newPassword = sc.nextInt();
+			}
 			System.out.print("Redigite a nova Senha de Transações: ");
 			confPassword = sc.nextInt();
 			if(newPassword == confPassword) {
 				System.out.println("Alteração Concluída com Sucesso!");
 				Holders.transactionPassword = newPassword;
-				break;
+				HomeScreen.menu();
 			}else if(newPassword != confPassword && attemps > 0) {
 				System.out.println("A confirmação não confere!\n");
 			}
