@@ -7,8 +7,8 @@ import transactions.Financing;
 public class Manager {
 	static Scanner sc = new Scanner(System.in);
 	public static boolean analysis() {
-		System.out.println("\n\t\tMANAGER");
-		System.out.println("\nSOLICITAÇÃO DE FINANCIAMENTO");
+		System.out.println("\n\t\tMANAGER\n");
+		System.out.println("SOLICITAÇÃO DE FINANCIAMENTO");
 		System.out.println("Nome: "+Holders.name);
 		System.out.println("CPF: "+Holders.cpf);
 		System.out.println("Valor do Imóvel: "+Financing.valimovel);

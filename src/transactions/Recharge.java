@@ -8,7 +8,7 @@ public class Recharge {
 	static Scanner sc = new Scanner(System.in);
 	public static void operators(){
 		double aux;
-		System.out.println("\n\t\tRECARGA");
+		System.out.println("\n\t\tRECARGA\n");
 		do {
 			System.out.println("1. TIM 2. VIVO 3.CLARO 0.SAIR");
 			System.out.print("Selecione a sua Operadora: ");
@@ -19,20 +19,9 @@ public class Recharge {
 				double number = sc.nextDouble();
 				System.out.print("Informe o valor da Recarga: ");
 				int recarga = sc.nextInt();
-				if(Holders.saldo >= recarga) {
-					System.out.print("Digite 1 para Confirmar ou 0 para Cancelar: ");
-					aux = sc.nextInt();
-					if(aux == 1) {
-						System.out.println("Recarga Realizada com Sucesso!");
-						Holders.saldo -= recarga;
-						break;
-					}else if(aux == 0) {
-						System.out.println("Solicitação de Recarga Cancelada!");
-					}else {
-						System.out.println("Opção Inválida!\n");
-					}
-				}else {
-					System.out.println("Saldo Insuficiente!\n");
+				if(Password.consult(recarga) && Password.confirmation() && Password.authorization()) {
+					Holders.saldo -= recarga;
+					break;
 				}
 			}else if(aux == 0){
 				break;

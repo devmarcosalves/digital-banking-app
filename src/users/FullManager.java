@@ -6,7 +6,7 @@ public class FullManager extends Manager{
 	static Scanner sc = new Scanner(System.in);
 	
 	public static int authorization() {
-		System.out.println("\n\t\tFULL MANAGER");
+		System.out.println("\n\t\tFULL MANAGER\n");
 		System.out.println("\nNOVO CADASTRO DE USUÁRIO");
 		System.out.println("Nome: "+Holders.name);
 		System.out.println("CPF: "+Holders.cpf);

@@ -18,8 +18,9 @@ public class HomeScreen {
         int opc;
         do{
         	if(Holders.transactionPassword != 0) {
+        		System.out.println("\n\t\tHOME SCREEN");
 		        System.out.println("\n1.PIX 2.RECARGA 3.SALDO 4.DEPÓSITO");
-		        System.out.println("5.TRANSFERÊNCIA 6.EMPRESTIMO 7.FINANCIAMENTO");
+		        System.out.println("5.TRANSFERÊNCIA 6.EMPRÉSTIMO 7.FINANCIAMENTO");
 		        System.out.println("8.PAGAMENTO 9.REDEFINIR SENHA DE TRANSAÇÕES 0.SAIR");
 		        System.out.print("Escolha uma opção: ");
 		        opc = sc.nextInt();
@@ -35,7 +36,7 @@ public class HomeScreen {
 		                break;
 		            case 4:
 		            	Deposit dep = new Deposit();
-		                dep.deposito(Holders.saldo);
+		            	Holders.saldo = dep.deposito(Holders.saldo);
 		                break;
 		            case 5:
 		                Transfer.values();

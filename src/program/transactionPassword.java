@@ -10,12 +10,17 @@ public class TransactionPassword {
 
 	public static void reset() {
 		int newPassword, confPassword, attemps = 3;;
-		System.out.println("\n\tREDEFINIÇÃO DA SENHA DE TRANSAÇÕES");
+		System.out.println("\n\tREDEFINIÇÃO DA SENHA DE TRANSAÇÕES\n");
 		do {
 			System.out.print("Digite a nova Senha de Transações: ");
 			newPassword = sc.nextInt();
+			while(newPassword == 0) {
+				System.out.println("A senha nova não pode ser (0)\n");
+				System.out.print("Digite a nova Senha de Transações: ");
+				newPassword = sc.nextInt();
+			}
 			while(newPassword == Holders.transactionPassword) {
-				System.out.println("A senha nova não pode ser igual a senha anterior!");
+				System.out.println("A senha nova não pode ser igual a senha anterior!\n");
 				System.out.print("Digite a nova Senha de Transações: ");
 				newPassword = sc.nextInt();
 			}

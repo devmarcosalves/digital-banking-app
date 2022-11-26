@@ -9,12 +9,12 @@ import screens.HomeScreen;
 public class Start {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		//HomeScreen.menu();
+		HomeScreen.menu();
 		//private static int opc = 0;
-		System.out.print("\t\tDIGITAL BANK\n");
 		int opc;
 		
 		do {
+			System.out.print("\t\tAPP DIGITAL BANK\n");
 			System.out.print("\n1. Login 2.Cadastro \n3.Depósito 0.Sair");
 			System.out.print("\nEscolha uma opção: ");
 			opc = sc.nextInt();

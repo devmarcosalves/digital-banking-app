@@ -1,6 +1,8 @@
 package transactions;
 
 import java.util.Scanner;
+
+import screens.HomeScreen;
 import users.Holders;
 
 public class Transfer {
@@ -9,7 +11,7 @@ public class Transfer {
 		//Scanner sc = new Scanner(System.in)
 		int bank;
 		do {
-			System.out.println("\n\t\tTRANSFERÊNCIA");
+			System.out.println("\n\t\tTRANSFERÊNCIA\n");
 			System.out.println("1.Caixa 2.Itaú 3.Bradesco \n4.Banco do Brasil 5.Santander 0.Sair");
 			System.out.print("Selecione o banco da conta destino: ");
 			bank = sc.nextInt();
@@ -32,7 +34,7 @@ public class Transfer {
 			case 0:
 				break;
 			default:
-				System.out.println("Opção Inválida!\n");
+				System.out.print("Opção Inválida!\n");
 			}
 		}while(bank != 0);
 	}
@@ -59,31 +61,16 @@ public class Transfer {
 			System.out.print("Insira um tipo de pessoa válido: ");
 			typeperson = sc.nextInt();
 		}
-		System.out.print("\nInsira o valor: ");
+		System.out.print("Insira o valor: ");
 		double value = sc.nextDouble();
 		while(value > Holders.saldo) {
 			System.out.println("Saldo Insuficiente!");
 			System.out.print("Insira o valor: ");
 			value = sc.nextDouble();
 		}
-		System.out.print("\nDigite sua Senha de Transações: ");
-		int password = sc.nextInt(); 
-		int aux = 3;
-		while(password != Holders.transactionPassword && aux > 0) {
-			System.out.println("Senha Incorreta! Você tem "+aux+" tentativa(s)");
-			System.out.print("Digite sua Senha de Transações: ");
-			password = sc.nextInt();
-			aux--;
-			if(aux == 0) {
-				System.out.println("Sua Senha de Transações foi bloqueada!\n");
-				Holders.transactionPassword = 0;
-				break;
-			}
-			//A senha de Transações deve receber outro dado, até que o usuário redefina a senha
-		}
-		if(password == Holders.transactionPassword) {
+		if(Password.consult(value) && Password.confirmation() && Password.authorization()) {
 			Holders.saldo -= value;
-			System.out.println("Transferência concluída com Sucesso!\n");
+			HomeScreen.menu();
 			//Creditar o valor na conta destino
 		}
 		//sc.close();
